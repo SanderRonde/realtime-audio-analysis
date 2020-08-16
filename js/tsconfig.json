@@ -23,5 +23,5 @@
 	},
 	"compileOnSave": true,
 	"allowJs": true,
-	"include": ["./app.ts"]
+	"include": ["./"]
 }

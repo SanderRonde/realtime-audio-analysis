@@ -1,4 +1,4 @@
-import { ANALYSIS_DATA_FILE } from './constants';
+import { ANALYSIS_DATA_FILE, URIS_DATA_FILE } from './constants';
 import { Spotify } from './spotify';
 import * as fs from 'fs-extra';
 
@@ -34,9 +34,15 @@ export namespace IO {
 
 	export namespace Output {
 		export async function exportAnalyses(
-			analyses: Spotify.Analysis.AudioAnalysis[]
+			analyses: Spotify.Analysis.TrackAnalysis[]
 		) {
 			await fs.writeFile(ANALYSIS_DATA_FILE, JSON.stringify(analyses), {
+				encoding: 'utf8',
+			});
+		}
+
+		export async function exportURIs(uris: string[]) {
+			await fs.writeFile(URIS_DATA_FILE, uris.join('\n'), {
 				encoding: 'utf8',
 			});
 		}

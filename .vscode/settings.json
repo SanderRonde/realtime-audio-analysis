@@ -1,0 +1,23 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		// "**/*.js": {
+		//   "when": "$(basename).ts"
+		// },
+		// "**/*.d.ts": {
+		//   "when": "$(basename)"
+		// },
+		// "**/*.map": {
+		//   "when": "$(basename)"
+		// }
+		"**/*.js": true,
+		"**/*.map": true,
+		"app/**/*.d.ts": true
+	},
+	"prettier.prettierPath": "./node_modules/prettier",
+	"python.pythonPath": "/home/sander/.pyenv/shims/python"
+}

@@ -127,12 +127,12 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-beat_aggregator/node_modules/
-beat_aggregator/**/*.js
-beat_aggregator/**/*.map
+**/node_modules/
+*/**/*.js
+*/**/*.map
 
 data/
 
-beat_aggregator/test
+testinput
 
 secrets
