@@ -475,7 +475,7 @@ export namespace Spotify {
 
 				analyses.push({
 					uri: id,
-					name: trackMap.get(id),
+					name: trackMap.get(id)!,
 					analysis: res,
 				});
 			}

@@ -3,10 +3,10 @@ import * as Bar from 'progress';
 export namespace ProgressBar {
 	export function awaitTimeBar(
 		ms: number,
-		parts?: {
+		parts: {
 			name: string;
 			duration: number;
-		}[]
+		}[] = []
 	) {
 		return new Promise<void>((resolve) => {
 			const seconds = Math.ceil(ms / 1000);
@@ -15,7 +15,10 @@ export namespace ProgressBar {
 			});
 
 			let partIndex: number = 0;
-			let currentPart = parts[partIndex];
+			let currentPart: {
+				name: string;
+				duration: number;
+			}|undefined = parts[partIndex];
 			if (currentPart) {
 				console.log(`Curent part: ${currentPart.name}`);
 			}
