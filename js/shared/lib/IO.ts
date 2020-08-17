@@ -1,6 +1,7 @@
 import { ANALYSIS_DATA_FILE, URIS_DATA_FILE } from './constants';
 import { Spotify } from './spotify';
 import * as fs from 'fs-extra';
+import * as path from 'path';
 
 export namespace IO {
 	export namespace Input {
@@ -36,12 +37,14 @@ export namespace IO {
 		export async function exportAnalyses(
 			analyses: Spotify.Analysis.TrackAnalysis[]
 		) {
+			await fs.ensureDir(path.dirname(ANALYSIS_DATA_FILE));
 			await fs.writeFile(ANALYSIS_DATA_FILE, JSON.stringify(analyses), {
 				encoding: 'utf8',
 			});
 		}
 
 		export async function exportURIs(uris: string[]) {
+			await fs.ensureDir(path.dirname(URIS_DATA_FILE));
 			await fs.writeFile(URIS_DATA_FILE, uris.join('\n'), {
 				encoding: 'utf8',
 			});

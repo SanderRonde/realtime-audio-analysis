@@ -24,3 +24,6 @@ exit_on_zero
 # Get tracks
 cat data/uris.txt | node js/modes/track_aggregator.js -
 exit_on_zero
+
+# Get bins
+node js/modes/gen_bins.js --output=data/bins/ --interval=50 data/tracks/*.wav

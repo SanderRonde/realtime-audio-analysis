@@ -136,3 +136,5 @@ data/
 testinput
 
 secrets
+
+ai/directml
