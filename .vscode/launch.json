@@ -1,0 +1,40 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Preprocessing",
+			"type": "python",
+			"request": "launch",
+			"program": "${workspaceFolder}/py/beat_detector/main.py",
+			"cwd": "${workspaceFolder}/py/beat_detector",
+			"args": [
+				"preprocess",
+				"-i", "../../data/tracks/*.wav",
+				"-o", "../../data/preprocessed.pickle",
+				"-n", "50",
+				"-a", "../../data/analysis.json"
+
+			],
+			"console": "integratedTerminal"
+		}, {
+			"name": "Training",
+			"type": "python",
+			"request": "launch",
+			"program": "${workspaceFolder}/py/beat_detector/main.py",
+			"cwd": "${workspaceFolder}",
+			"args": [
+				"train",
+				"-i", "./data/preprocessed.pickle",
+				"-ow", "./data/weights.h5",
+				"-ot", "./data/train_config.json",
+				"-s", "80",
+				"-b", "32",
+				"-e", "5"
+			],
+			"console": "integratedTerminal"
+		}
+	]
+}

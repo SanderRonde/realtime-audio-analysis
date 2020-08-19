@@ -19,5 +19,11 @@
 		"app/**/*.d.ts": true
 	},
 	"prettier.prettierPath": "./node_modules/prettier",
-	"python.pythonPath": "/home/sander/.pyenv/shims/python"
+	"python.pythonPath": "/home/sander/.config/miniconda3/envs/directml/bin/python",
+	"python.analysis.extraPaths": [
+		"py/beat_detector"
+	],
+	"python.analysis.diagnosticMode": "workspace",
+	"python.analysis.typeCheckingMode": "strict",
+	"python.formatting.provider": "black"
 }

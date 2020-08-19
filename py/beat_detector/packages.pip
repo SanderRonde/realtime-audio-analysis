@@ -1,0 +1,6 @@
+PyYAML==5.3.1
+numpy==1.19.1
+sklearn==0.0
+typing-extensions==3.7.4.2
+youtube-dl==2020.7.28
+Wave==0.0.2

@@ -134,8 +134,6 @@ namespace BinGenerator {
 					}
 				}
 
-				console.log(io);
-
 				if (!io.outDir || io.outDir === '-o') {
 					process.stderr.write('Please supply an output dir\n');
 					process.exit(1);
@@ -218,9 +216,13 @@ namespace BinGenerator {
 			}
 
 			export async function writeBin(io: IO.Input.IO, binFile: BinFile) {
-				await fs.writeFile(getFileOutPath(io, binFile), binFile.data, {
-					encoding: 'utf8',
-				});
+				await fs.writeFile(
+					getFileOutPath(io, binFile),
+					JSON.stringify(binFile.data),
+					{
+						encoding: 'utf8',
+					}
+				);
 			}
 
 			export async function writeBins(
